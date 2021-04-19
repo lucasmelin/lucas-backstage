@@ -6,6 +6,7 @@
     "node": "12 || 14"
   },
   "scripts": {
+    "dev": "concurrently \"yarn start\" \"yarn start-backend\"",
     "start": "yarn workspace app start",
     "start-backend": "yarn workspace backend start",
     "build": "lerna run build",
@@ -28,9 +29,10 @@
     ]
   },
   "devDependencies": {
-    "@backstage/cli": "^0.4.6",
+    "@backstage/cli": "^0.6.7",
     "@spotify/prettier-config": "^7.0.0",
-    "lerna": "^3.20.2",
+    "concurrently": "^6.0.0",
+    "lerna": "^4.0.0",
     "prettier": "^1.19.1"
   },
   "prettier": "@spotify/prettier-config",
@@ -45,7 +47,7 @@
   },
   "jest": {
     "transformModules": [
-      "@kyma-project/asyncapi-react"
+      "@asyncapi/react-component"
     ]
   }
 }
